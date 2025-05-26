@@ -1,10 +1,8 @@
-from fastapi import APIRouter, UploadFile, File, Request, HTTPException
-from fastapi.responses import StreamingResponse
-from hdfs import InsecureClient
+from fastapi import APIRouter, UploadFile, File
+from app.core.hdfs import hdfs_client
 import shutil, uuid, os
 
 router = APIRouter()
-hdfs_client = InsecureClient('http://localhost:9870', user='hadoop')
 
 @router.post("/upload")
 def upload_video(file: UploadFile = File(...)):
