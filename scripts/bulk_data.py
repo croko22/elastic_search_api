@@ -6,7 +6,7 @@ from elasticsearch import Elasticsearch, helpers
 
 es = Elasticsearch("http://localhost:9200", api_key="UEttVF9aWUJ1Q0hTNl9FdzhWX3M6eDFKZUlLSEJDel94aWl3aHlENUVNdw==")
 
-video_files = [f for f in os.listdir("./videos") if f.endswith(".mp4")]
+video_files = [f for f in os.listdir("../videos") if f.endswith(".mp4")]
 resolutions = ["640x360", "1280x720", "1920x1080"]
 codecs = ["h264", "mpeg4", "vp9", "h265"]
 object_types = [
